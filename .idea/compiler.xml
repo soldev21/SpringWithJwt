@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="SpringWithJwt" />
         <module name="TestController" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="SpringWithJwt" target="1.8" />
       <module name="TestController" target="1.8" />
     </bytecodeTargetLevel>
   </component>

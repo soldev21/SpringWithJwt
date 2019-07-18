@@ -1,5 +1,8 @@
 package main.jwt.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * Created by Sherif on 6/1/2018.
  */

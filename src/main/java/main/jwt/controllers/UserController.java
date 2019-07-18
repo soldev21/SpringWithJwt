@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin("http://localhost:3000")
+//@CrossOrigin("http://localhost:3000")
 public class UserController {
 
     private ApplicationUserRepository applicationUserRepository;
@@ -23,14 +23,15 @@ public class UserController {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
-    @PostMapping("/sign-up")
-    public void signUp(@RequestBody ApplicationUser user) {
+    @PostMapping("/signUp")
+    public String signUp(@RequestBody ApplicationUser user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         applicationUserRepository.save(user);
+        return "Successful!";
     }
 
 
-    @PostMapping("/test")
+    @GetMapping("/test")
     public String test() {
         return "TEST IS WORKING";
     }
